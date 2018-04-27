@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="78cdedcf-ae5b-43a0-9a7a-354ab2a61d99" activeEnvironment="Default" name="OLISLite" resourceRoot="${projectDir}" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="17d4e983-74fa-45f9-9f57-842b922f564d" wsaVersion="NONE" name="OLISSoap" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_OlisService" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/olis?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/olis?wsdl"><con:part><con:url>http://localhost:8080/olis?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="OlisService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://www.ssha.ca/2005/HIAL" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:import namespace="http://www.ssha.ca/2005/HIAL" location="http://localhost:8080/olis?wsdl=wsdl0"/>
+  <wsdl:types/>
+  <wsdl:binding name="BasicHttpBinding_OlisService" type="i0:OlisService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="OLISRequest">
+      <soap:operation soapAction="http://www.ssha.ca/2005/HIAL/OLIS/OLISRequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OlisService">
+    <wsdl:port name="BasicHttpBinding_OlisService" binding="tns:BasicHttpBinding_OlisService">
+      <soap:address location="http://localhost:8080/olis"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/olis?wsdl=wsdl0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.ssha.ca/2005/HIAL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.ssha.ca/2005/HIAL" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.ssha.ca/2005/HIAL/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/olis?xsd=xsd0" namespace="http://www.ssha.ca/2005/HIAL"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="OlisService_OLISRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:OLISRequest"/>
+  </wsdl:message>
+  <wsdl:message name="OlisService_OLISRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OLISRequestResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="OlisService">
+    <wsdl:operation name="OLISRequest">
+      <wsdl:input wsaw:Action="http://www.ssha.ca/2005/HIAL/OLIS/OLISRequest" message="tns:OlisService_OLISRequest_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.ssha.ca/2005/HIAL/OLIS/OLISRequestResponse" message="tns:OlisService_OLISRequest_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/olis?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://www.ssha.ca/2005/HIAL" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ssha.ca/2005/HIAL">
+  <xs:element name="OLISRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="HIALRequest" type="tns:HIALRequest"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="HIALRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ClientTransactionID" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="SignedRequest" type="tns:SignedRequest"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="SubmitterFullName" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="SubmitterID" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="SubmitterOrganization" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="SubmitterRole" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SignedRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SignedData" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OLISRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="HIALResponse" type="tns:HIALResponse"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="HIALResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ClientTransactionID" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="SignedResponse" type="tns:SignedResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SignedResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SignedData" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://lite.innovation-lab.ca:8080/olis</con:endpoint></con:endpoints><con:operation id="80811371-b64a-46cf-9642-384b5ce230c6" isOneWay="false" action="http://www.ssha.ca/2005/HIAL/OLIS/OLISRequest" name="OLISRequest" bindingOperationName="OLISRequest" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://lite.innovation-lab.ca:8080/olis</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hial="http://www.ssha.ca/2005/HIAL/" xmlns:hial1="http://www.ssha.ca/2005/HIAL">
+ <soapenv:Header/>
+ <soapenv:Body>
+  <hial:OLISRequest>
+   <hial1:HIALRequest>
+    <SignedRequest>
+     <SignedData>PFJlcXVlc3QgeG1sbnM9Imh0dHA6Ly93d3cuc3NoYS5jYS8yMDA1L0hJQUwiPjxDb250ZW50PjwhW0NEQVRBW01TSHxeflwmfDE3ODU3YWRlLTJhY2ItNDVlNS1hMjQ2LWYxMDZhYTcxZTAxYXx8fHx8fFNQUV5aMDFeU1BRX1EwOHxiZDczNTQ0OS03NjI0LTQ0MjUtODkxMi05ZmFkNjhmNDVlYTh8UF5UfDIuMy4xDVNQUnxRUllUQUcxMjN8UnxaX1FyeUxhYkluZm9Gb3JQYXRpZW50SUReXkhMNzA0NzF8QE9CUi4yMl4yMDAyMDEwMTAwMDAwMC0wNDAwfkBQSUQuMy4xXjY5NDg0MjU1ODl+QFBJRC44XkZ+QFBJRC43XjE5OTQwMTE1fkBaUlAuMS4xXjkyNjI3OX5AWlJQLjEuMTNeTURMfkBaUlAuMS4yMi4xXk9OfkBaUlAuMS4yMi4zXkhMNzAzNDd+QFpSUC4xLjJeUmljaGFyZHN+QFpSUC4xLjNeUmVlZH5AWlJQLjEuNA1aSUx8SSBoZXJlYnkgYWNjZXB0IHRoZSBzZXJ2aWNlIGFncmVlbWVudCBoZXJlOiBodHRwczovL2lubm92YXRpb24tbGFiLmNhL21lZGlhLzExNDcvaW5ub3ZhdGlvbi1sYWItdGVybXMtb2YtdXNlLnBkZg1aU0h8ODM5NDUwNzM0fEpvaG4gSGVucnkgRXZlcnltYW4NXV0+PC9Db250ZW50PjwvUmVxdWVzdD4=</SignedData>
+    </SignedRequest>
+   </hial1:HIALRequest>
+  </hial:OLISRequest>
+ <hial1:OLISRequest/></soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ssha.ca/2005/HIAL/OLIS/OLISRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="Sample OLIS Lite Services Test"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Query" searchProperties="true" id="e036fa8c-e27f-481f-9c68-39426d99ec8b"><con:settings/><con:testStep type="request" name="Z01 OLISRequest - LITE services"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OLISSoap</con:interface><con:operation>OLISRequest</con:operation><con:request name="Z01 OLISRequest - LITE services" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://lite.innovation-lab.ca:8080/olis</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hial="http://www.ssha.ca/2005/HIAL/" xmlns:hial1="http://www.ssha.ca/2005/HIAL">
+ <soapenv:Header/>
+ <soapenv:Body>
+  <hial:OLISRequest>
+   <hial1:HIALRequest>
+    <SignedRequest>
+     <SignedData>PFJlcXVlc3QgeG1sbnM9Imh0dHA6Ly93d3cuc3NoYS5jYS8yMDA1L0hJQUwiPjxDb250ZW50PjwhW0NEQVRBW01TSHxeflwmfFVuaXF1ZVNlbmRlcklkZW50aWZpZXJ8fHx8fHxTUFFeWjAxXlNQUV9RMDh8YmQ3MzU0NDktNzYyNC00NDI1LTg5MTItOWZhZDY4ZjQ1ZWE4fFBeVHwyLjMuMQ0KU1BSfFFSWVRBRzEyM3xSfFpfUXJ5TGFiSW5mb0ZvclBhdGllbnRJRF5eSEw3MDQ3MXxAT0JSLjIyXjIwMDIwMTAxMDAwMDAwLTA0MDB+QFBJRC4zLjFeNjk0ODQyNTU4OX5AUElELjheRn5AUElELjdeMTk5NDAxMTV+QFpSUC4xLjFeOTI2Mjc5fkBaUlAuMS4xM15NREx+QFpSUC4xLjIyLjFeT05+QFpSUC4xLjIyLjNeSEw3MDM0N35AWlJQLjEuMl5SaWNoYXJkc35AWlJQLjEuM15SZWVkfkBaUlAuMS40DQpaSUx8SSBoZXJlYnkgYWNjZXB0IHRoZSBzZXJ2aWNlIGFncmVlbWVudCBoZXJlOiBodHRwczovL2lubm92YXRpb24tbGFiLmNhL21lZGlhLzExNDcvaW5ub3ZhdGlvbi1sYWItdGVybXMtb2YtdXNlLnBkZg0KWlNIfDgzOTQ1MDczNHxKb2huIEhlbnJ5IEV2ZXJ5bWFuDQpdXT48L0NvbnRlbnQ+PC9SZXF1ZXN0Pg==</SignedData>
+    </SignedRequest>
+   </hial1:HIALRequest>
+  </hial:OLISRequest>
+ <hial1:OLISRequest/></soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Simple NotContains" name="Has valid Unique Sender Identifier"><con:configuration><token>Invalid unique sender identifier.</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" name="Does not have license agreement violations"><con:configuration><token>UmVxdWVzdCBmYWlsZWQgdmFsaWRhdGlvbi4gWW91IGhhdmUgbm90IGFkaGVyZWQgdG8gb3VyIG1lc3NhZ2Ugc3BlY2lmaWNhdGlvbiByZWdhcmRpbmcgdGhlIGxpY2Vuc2UgYWdyZWVtZW50IGFja25vd2xlZGdlbWVudC4gU2VlIGhlcmU6IGh0dHBzOi8vaW5ub3ZhdGlvbi1sYWIuY2EvdXNpbmctc2VuZGVyLWlkZW50aWZpZXJz</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" name="Check for existance of [SignedData]"><con:configuration><path>declare namespace ns3='http://www.ssha.ca/2005/HIAL/';
+declare namespace ns2='http://www.ssha.ca/2005/HIAL';
+exists( //ns3:OLISRequestResponse/ns2:HIALResponse/SignedResponse/SignedData)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Simple NotContains" name="Is able to extract contents from the OLIS Server"><con:configuration><token>VW5hYmxlIHRvIGV4dHJhY3QgY29udGVudC4=</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" name="Check for existance of [ClientTransactionID]"><con:configuration><path>declare namespace ns3='http://www.ssha.ca/2005/HIAL/';
+declare namespace ns2='http://www.ssha.ca/2005/HIAL';
+exists( //ns3:OLISRequestResponse/ns2:HIALResponse/ClientTransactionID)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ssha.ca/2005/HIAL/OLIS/OLISRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/></con:soapui-project>
